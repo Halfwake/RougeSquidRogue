@@ -35,7 +35,10 @@ class DungeonMode(Mode):
     def draw(self):
         self.map.draw(self.con)
         self.player.draw(self.con)
-        libtcod.console_blit(self.con, 0, 0, conf.SCREEN_WIDTH, conf.SCREEN_HEIGHT, 0, 0, 0)
+        
+        x = camera.Camera.X - (conf.GAME_WIDTH / 2)
+        y = camera.Camera.Y - (conf.SCREEN_HEIGHT / 2)
+        libtcod.console_blit(self.con, x, y, conf.SCREEN_WIDTH, conf.SCREEN_HEIGHT, 0, 0, 0)
     def erase(self):
         self.player.erase()
     def handleKeys(self, key):

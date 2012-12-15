@@ -27,10 +27,8 @@ class Entity(object):
         "Draws the tile to the screen."
         self.lastConsole = console
         libtcod.console_set_default_foreground(console, self.color)
-        x = self.x + (camera.Camera.X / 2)
-        y = self.y + (camera.Camera.Y / 2)
         #print (x, y) #debugging
-        libtcod.console_put_char(console, x, y, self.symbol, libtcod.BKGND_NONE)
+        libtcod.console_put_char(console, self.x, self.y, self.symbol, libtcod.BKGND_NONE)
     def erase(self, console = None):
         "Erases the tile on the selected console. If no console is specified it usees the console from the last draw call."
         assert self.lastConsole, "Attempted to erase before drawing."
