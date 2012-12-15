@@ -17,10 +17,10 @@ class Entity(object):
 
         self.lastConsole = None
     def move(self, dx, dy):
-        if 0 < self.x + dx < conf.GAME_WIDTH:
+        if -1 < self.x + dx < conf.GAME_WIDTH:
             if not self.owner.isBlocked(self.x + dx, self.y):
                 self.x += dx
-        if 0 < self.y + dy < conf.GAME_HEIGHT:
+        if -1 < self.y + dy < conf.GAME_HEIGHT:
             if not self.owner.isBlocked(self.x, self.y + dy):
                 self.y += dy
     def draw(self, console):
