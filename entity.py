@@ -46,7 +46,7 @@ class Entity(object):
 class Player(Entity):
     "The player class, you can have as many as you want."
     Symbol = '@'
-    Color = libtcod.red
+    Color = libtcod.orange
     Name = "Humprhey"
     def __init__(self, owner, x, y):
         super(Player, self).__init__(owner, x, y, Player.Symbol, Player.Color, Player.Name, True)
